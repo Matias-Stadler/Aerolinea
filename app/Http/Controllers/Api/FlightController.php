@@ -25,12 +25,12 @@ class FlightController extends Controller
                 "date" => $request->date,
                 "departure" => $request->departure,
                 "arrival" => $request->arrival,
-                "aircraft_id" => $request->aircraftId,
+                "airship_id" => $request->airshipId,
                 "available" => $request->available
             ]
         );
 
-        if ($flight->aircraft->seats != 0 && !$flight->available)
+        if ($flight->airship->seats != 0 && !$flight->available)
         {
             $flight->update(
                 [
@@ -49,12 +49,12 @@ class FlightController extends Controller
                 "date" => $request->date,
                 "departure" => $request->departure,
                 "arrival" => $request->arrival,
-                "aircraft_id" => $request->aircraftId,
+                "airship_id" => $request->airshipId,
                 "available" => $request->available
             ]
         );
 
-        if ($flight->aircraft->seats != 0 && !$flight->available)
+        if ($flight->airship->seats != 0 && !$flight->available)
         {
             $flight->update(
                 [
