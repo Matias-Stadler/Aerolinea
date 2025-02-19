@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookingAllowed
@@ -15,6 +17,10 @@ class BookingAllowed
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!Auth::check() && $request->action)
+        {
+            return Redirect::to(route("show", $request->id));
+        }
         return $next($request);
     }
 }
