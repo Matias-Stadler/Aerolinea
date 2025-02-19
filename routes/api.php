@@ -3,17 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\FlightController;
-use App\Http\Controllers\api\AircraftController;
+use App\Http\Controllers\api\AirshipController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post("/aircraft", [AircraftController::class, "store"])->name("apiaircraftstore");
-Route::get("/aircraft", [AircraftController::class, "index"])->name("apiaircraftindex");
-Route::get("/aircraft/{id}", [AircraftController::class, "show"])->name("apiaircraftshow");
-Route::put("/aircraft/{id}", [AircraftController::class, "update"])->name("apiaircraftupdate");
-Route::delete("/aircraft/{id}", [AircraftController::class, "destroy"])->name("apiaircraftdestroy");
+Route::post("/airships", [AirshipController::class, "store"])->name("apiairshipstore");
+Route::get("/airships", [AirshipController::class, "index"])->name("apiairshipindex");
+Route::get("/airships/{id}", [AirshipController::class, "show"])->name("apiairshipshow");
+Route::put("/airships/{id}", [AirshipController::class, "update"])->name("apiairshipupdate");
+Route::delete("/airships/{id}", [AirshipController::class, "destroy"])->name("apiairshipdestroy");
 
 Route::post("/flights", [FlightController::class, "store"])->name("apiflightstore");
 Route::get("/flights", [FlightController::class, "index"])->name("apiflightindex");
