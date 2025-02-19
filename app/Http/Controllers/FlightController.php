@@ -13,7 +13,7 @@ class FlightController extends Controller
     {
         $flights = Flight::All();
 
-        return (view("index", compact("flights")));
+        return (view("home", compact("flights")));
     }
 
     public function book(Flight $flight, int $userId)
