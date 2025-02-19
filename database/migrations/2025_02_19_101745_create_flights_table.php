@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('departure');
+            $table->string('arrival');
+            $table->foreignId('aircraft_id')->constrained('aircraft')->onDelete('cascade');
+            $table->boolean('available');
             $table->timestamps();
         });
     }
