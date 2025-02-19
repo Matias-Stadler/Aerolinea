@@ -15,13 +15,13 @@ class Flight extends Model
         "date",
         "departure",
         "arrival",
-        "aircraft_id",
+        "airship_id",
         "available"
     ];
 
-    public function aircraft(): BelongsTo
+    public function airship(): BelongsTo
     {
-        return $this->belongsTo(Aircraft::class);
+        return $this->belongsTo(Airship::class);
     }
 
     public function users(): BelongsToMany
